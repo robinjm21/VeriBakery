@@ -14,6 +14,15 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
+## Variables de entorno
+- Copia `.env.example` a `.env` y ajusta valores.
+- `DATABASE_URL`:
+  - Por defecto: `sqlite:///./veribakery.db` (SQLite local).
+  - Ejemplos:
+    - PostgreSQL: `postgresql+psycopg2://user:password@localhost:5432/veribakery`
+    - MySQL: `mysql+pymysql://user:password@localhost:3306/veribakery`
+- La app carga `.env` mediante `pydantic-settings`.
+
 ## Ejecución
 ```bash
 uvicorn app.main:app --reload
